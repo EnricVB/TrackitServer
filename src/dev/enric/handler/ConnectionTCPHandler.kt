@@ -18,7 +18,7 @@ class ConnectionTCPHandler {
             if (matchResult != null) {
                 val (_, _, _, _, path) = matchResult.destructured
                 val repositoryPath = Paths.get(path)
-                val redirectPort = Random.nextInt(74000, 75000)
+                val redirectPort = Random.nextInt(7400, 7500)
 
                 if (RepositoryManager.repositoryExists(repositoryPath)) {
                     executeTCPServe(repositoryPath, redirectPort)

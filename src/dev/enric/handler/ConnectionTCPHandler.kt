@@ -30,7 +30,7 @@ class ConnectionTCPHandler {
     }
 
     private fun executeTCPServe(repositoryFolder: Path, port: Int) {
-        val pb = ProcessBuilder("trackit", "tcp-serve", "--port", port.toString())
+        val pb = ProcessBuilder("java", "-jar", "trackit.jar", "tcp-serve", "--port", port.toString())
         pb.directory(repositoryFolder.toFile())
         pb.start()
     }

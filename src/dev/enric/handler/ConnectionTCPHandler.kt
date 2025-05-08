@@ -37,7 +37,7 @@ class ConnectionTCPHandler {
 
     private fun responseToClient(clientSocket: Socket, response: MatchResult?, redirectPort: Int) {
         val (username, password, ip, _, path) = response!!.destructured
-        val redirectResponse = "tcp://$username:$password@$ip:$redirectPort/$path"
+        val redirectResponse = "trackit://$username:$password@$ip:$redirectPort/$path"
 
         val output = BufferedWriter(OutputStreamWriter(clientSocket.getOutputStream()))
         output.write(redirectResponse)
